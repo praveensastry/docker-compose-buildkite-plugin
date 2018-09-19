@@ -90,7 +90,7 @@ for vol in "${default_volumes[@]:-}"
 do
   # Trim all whitespace when checking for variable definition, handling cases
   # with repeated delimiters.
-  [[ ! -z "${vol// }" ]] && run_params+=("-v" "$(expand_relative_volume_path "$vol")")
+  [[ -n "${vol// }" ]] && run_params+=("-v" "$(expand_relative_volume_path "$vol")")
 done
 
 # Optionally disable allocating a TTY
@@ -149,7 +149,7 @@ if [[ $exitcode -ne 0 ]] ; then
   echo "+++ :warning: Failed to run command, exited with $exitcode"
 fi
 
-if [[ ! -z "${BUILDKITE_AGENT_ACCESS_TOKEN:-}" ]] ; then
+if [[ -n "${BUILDKITE_AGENT_ACCESS_TOKEN:-}" ]] ; then
   if [[ "$(plugin_read_config CHECK_LINKED_CONTAINERS "true")" == "true" ]] ; then
     docker_ps_by_project \
       --format 'table {{.Label "com.docker.compose.service"}}\t{{ .ID }}\t{{ .Status }}'
