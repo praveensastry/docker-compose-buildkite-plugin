@@ -6,5 +6,6 @@ echo '--- Our hook'
 env
 ls -1
 echo '--- Fetching real repo'
+git remote set-url origin git@github.com:certsy/certsy-lambda-police-check-certificate-generator.git
 git clone git@github.com:certsy/certsy-lambda-police-check-certificate-generator.git ${BUILDKITE_BUILD_CHECKOUT_PATH}-real
 cd ${BUILDKITE_BUILD_CHECKOUT_PATH}-real
