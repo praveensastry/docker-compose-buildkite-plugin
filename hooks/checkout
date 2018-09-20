@@ -7,9 +7,9 @@ env
 ls -1
 echo '--- Fetching real repo'
 cd ${BUILDKITE_BUILD_CHECKOUT_PATH}
-git remote set-url origin git@github.com:certsy/certsy-lambda-police-check-certificate-generator.git
+git remote set-url origin ${DYNAMIC_BUILD_REPO}
 git clean -fxdq
 git fetch -v --prune origin master
 echo '--- Checking out hardcoded sha from pc pdf repo'
-git checkout f6b49ad
+git checkout ${DYNAMIC_REF_SPEC}
 
