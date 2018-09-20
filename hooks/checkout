@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -euo pipefail
+
+git checkout git@github.com:certsy/certsy-lambda-police-check-certificate-generator.git ${BUILDKITE_BUILD_CHECKOUT_PATH}
+cd ${BUILDKITE_BUILD_CHECKOUT_PATH}
