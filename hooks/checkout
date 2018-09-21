@@ -13,5 +13,3 @@ git fetch -v --prune origin master
 echo '--- Checking out hardcoded sha from pc pdf repo'
 git checkout ${DYNAMIC_REF_SPEC}
 
-export BUILDKITE_BRANCH="test"
-
