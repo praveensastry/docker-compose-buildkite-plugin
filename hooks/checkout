@@ -11,5 +11,5 @@ git remote set-url origin ${DYNAMIC_BUILD_REPO}
 git clean -fxdq
 git fetch -v --prune origin master
 echo '--- Checking out hardcoded sha from pc pdf repo'
-git checkout ${DYNAMIC_REF_SPEC}
+git reset --hard ${DYNAMIC_REF_SPEC}
 
