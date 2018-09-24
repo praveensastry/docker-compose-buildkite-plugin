@@ -7,7 +7,6 @@ env
 ls -1
 echo '--- Fetching real repo'
 rm -rf "${BUILDKITE_BUILD_CHECKOUT_PATH}"
-cd ${BUILDKITE_BUILD_CHECKOUT_PATH}
 git init ${BUILDKITE_BUILD_CHECKOUT_PATH}
 git remote add origin ${DYNAMIC_BUILD_REPO}
 git fetch
