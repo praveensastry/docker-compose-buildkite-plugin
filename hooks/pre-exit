@@ -2,6 +2,10 @@
 
 set -euo pipefail
 
+echo '--- Fetching Command exit status'
+
+echo ${BUILDKITE_COMMAND_EXIT_STATUS}
+
 echo '--- Posting build status...'
 
 curl -u praveensastry:${TEST_GIT_TOKEN} https://api.github.com/repos/certsy/certsy-lambda-police-check-certificate-generator/statuses/f6b49ad728df094d1e5b412393a5169994bb6041 \
