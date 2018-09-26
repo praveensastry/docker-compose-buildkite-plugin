@@ -9,8 +9,8 @@ echo '--- Fetching real repo'
 rm -rf "${BUILDKITE_BUILD_CHECKOUT_PATH}"
 git init ${BUILDKITE_BUILD_CHECKOUT_PATH}
 cd ${BUILDKITE_BUILD_CHECKOUT_PATH}
-git remote add origin ${DYNAMIC_BUILD_REPO}
+git remote add origin ${GIT_REPO_URL}
 git fetch
 echo '--- Checking out hardcoded sha from pc pdf repo'
-git reset --hard ${DYNAMIC_REF_SPEC}
+git reset --hard ${GIT_REF_SPEC}
 
