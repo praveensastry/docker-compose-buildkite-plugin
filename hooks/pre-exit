@@ -4,7 +4,7 @@ set -euo pipefail
 
 echo '--- Posting build status...'
 
-curl -u praveensastry:5cad067ccc7bf845356faac743b519673f137a90 https://api.github.com/repos/certsy/certsy-lambda-police-check-certificate-generator/statuses/f6b49ad728df094d1e5b412393a5169994bb6041 \
+curl -u praveensastry:${TEST_GIT_TOKEN} https://api.github.com/repos/certsy/certsy-lambda-police-check-certificate-generator/statuses/f6b49ad728df094d1e5b412393a5169994bb6041 \
 -X POST \
 -d '{
   "state": "success",
