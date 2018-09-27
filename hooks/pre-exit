@@ -4,6 +4,10 @@ set -euo pipefail
 
 BUILD_STEP_STATUS="pending"
 
+echo '--- BUILD_SUCCESS'
+
+echo ${BUILD_SUCCESS}
+
 echo '--- Fetching Build step status'
 
 if [ ${BUILDKITE_COMMAND_EXIT_STATUS} == 0 ]
