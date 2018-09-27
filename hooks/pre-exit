@@ -18,7 +18,7 @@ else
   BUILD_STEP_STATUS="failure"
 fi
 
-echo '--- Posting build status...'
+echo '--- Payload for github status'
 
 payload=`cat <<EOF
 {
@@ -27,7 +27,11 @@ payload=`cat <<EOF
   "description": "Build status from buildkite",
   "context": "certsy/lambda-build"
 }
-EOF`
+EOF `
+
+echo ${payload}
+
+echo '--- Posting build status...'
 
 curl -u praveensastry:${GIT_ACCESS_TOKEN} https://api.github.com/repos/${GIT_ORG_NAME}/${GIT_REPO_NAME}/statuses/${GIT_REF_SPEC} \
 -X POST \
