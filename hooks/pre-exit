@@ -23,9 +23,9 @@ echo '--- Payload for github status'
 payload=$(cat <<EOF
 { \
   "state": "${BUILD_STEP_STATUS}", \
-  "target_url": "https://buildkite.com", \
+  "target_url": "${BUILDKITE_BUILD_URL}", \
   "description": "Build status from buildkite", \
-  "context": "certsy/lambda-build" \
+  "context": "buildkite/certsy-lambda-infra" \
 }
 EOF
 )
